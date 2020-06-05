@@ -1,72 +1,125 @@
-<div class="cotn_principal">
-    <div class="cont_centrar">
+<!DOCTYPE html>
+<html lang="en">
 
-        <head>
-            <link rel="stylesheet" href="css/stylel.css">
-            <script src="login1.js">
-            </script>
-        </head>
-        <div class="cont_login">
-            <div class="cont_info_log_sign_up">
-                <div class="col_md_login">
-                    <div class="cont_ba_opcitiy">
+<head>
+    <title>Login / Sign Up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-                        <h2> LOGIN
-                        </h2>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <button class="btn_login" onclick="cambiar_login()"> LOGIN</button>
+    <link rel="stylesheet" type="text/css" href="lvendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="lfonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="lfonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="lvendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="lvendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="lvendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="lvendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="lvendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="lcss/lutil.css">
+    <link rel="stylesheet" type="text/css" href="lcss/lmain.css">
+    <!--===============================================================================================-->
+</head>
+
+<body style="background-color:#df9f9e;">
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form">
+                    <span class="login100-form-title p-b-43">
+						Login to continue
+					</span>
+
+
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" name="email">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Email</span>
                     </div>
-                </div>
-                <div class="col_md_sign_up">
-                    <div class="cont_ba_opcitiy">
-                        <h2> SIGN UP </h2>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-                        <button class="btn_sign_up" onclick="cambiar_sign_up()"> SIGN UP
-                            </button>
+
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input class="input100" type="password" name="pass">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Password</span>
                     </div>
+
+                    <div class="flex-sb-m w-full p-t-3 p-b-32">
+                        <div class="contact100-form-checkbox">
+                            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                            <label class="label-checkbox100" for="ckb1">
+								Remember me
+							</label>
+                        </div>
+
+                        <div>
+                            <a href="#" class="txt1">
+								Forgot Password?
+							</a>
+                        </div>
+                    </div>
+
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn">
+							Login
+						</button>
+                    </div>
+
+                    <div class="text-center p-t-46 p-b-20">
+                        <span class="txt2">
+							or sign up using
+						</span>
+                    </div>
+
+                    <div class="login100-form-social flex-c-m">
+                        <a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
+                            <i class="fa fa-google-plus" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+                            <i class="fa fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+                            <i class="fa fa-google" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </form>
+
+                <div class="login100-more" style="background-image: url('images/bg-01.jpg');">
                 </div>
             </div>
-
-
-            <div class="cont_back_info">
-                <div class="cont_img_back_grey">
-                    <img src="https://images.unsplash.com/photo-1564878536211-c8f2a1ca24c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="" />
-                </div>
-
-            </div>
-            <div class="cont_forms">
-                <div class="cont_img_back_">
-                    <img src="https://images.unsplash.com/photo-1547714062-4daa321e1d6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="" />
-                </div>
-                <div class="cont_form_login">
-                    <a href="#" onclick="ocultar_login_sign_up()">
-                        <i class="material-icons"> & #xE5C4;</i>
-                    </a>
-                    <h2> LOGIN
-                    </h2>
-                    <input type="text" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <button class="btn_login" onclick="cambiar_login()"> LOGIN
-                        </button>
-                </div>
-
-                <div class="cont_form_sign_up">
-                    <a href="#" onclick="ocultar_login_sign_up()">
-                        <i class="material-icons"> & #xE5C4;</i>
-                    </a>
-                    <h2> SIGN UP
-                    </h2>
-                    <input type="text" placeholder="Email" />
-                    <input type="text" placeholder="User" />
-                    <input type="password" placeholder="Password" />
-                    <input type="password" placeholder="Confirm Password" />
-                    <button class="btn_sign_up" onclick="cambiar_sign_up()"> SIGN UP</button>
-
-                </div>
-
-            </div>
-
         </div>
     </div>
-</div>
+
+
+
+
+
+    <!--===============================================================================================-->
+    <script src="lvendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="lvendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="lvendor/bootstrap/js/popper.js"></script>
+    <script src="lvendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="lvendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="lvendor/daterangepicker/moment.min.js"></script>
+    <script src="lvendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="lvendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="ljs/lmain.js"></script>
+
+</body>
+
+</html>
