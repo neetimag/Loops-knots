@@ -464,7 +464,7 @@ mark,
 }
 
 .list-unstyled {
-    padding-left: 0;
+    padding-left: 30px;
     list-style: none;
 }
 
@@ -13506,7 +13506,7 @@ textarea.form-control {
 .contactForm .form-control {
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0;
+    padding: none;
 }
 
 .contactForm .form-control {
