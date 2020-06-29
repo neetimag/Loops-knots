@@ -212,10 +212,10 @@ h5,
                 border-bottom-color: #fff;
             }
             .dropdown-item {
-                font-size: 16px;
+                font-size: 10px;
                 color: rgba(0, 0, 0, .7);
                 font-weight: 400;
-                padding: 20px;
+                padding: 15px;
                 border-bottom: 1px solid rgba(0, 0, 0, .05);
                 white-space: normal;
                 &:last-child() {
@@ -230,7 +230,7 @@ h5,
                     width: calc(100% - 60px);
                     h4 {
                         margin-bottom: 0;
-                        font-size: 18px;
+                        font-size: 15px;
                         font-weight: 500;
                         color: rgba(0, 0, 0, .8);
                     }
