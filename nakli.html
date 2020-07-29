@@ -1,11 +1,296 @@
-<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row no-gutters slider-text align-items-end justify-content-center">
-            <div class="col-md-9 ftco-animate mb-5 text-center">
-                <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span><a href="product.html">Products <i class="fa fa-chevron-right"></i></a></span> <span>Products Single <i class="fa fa-chevron-right"></i></span></p>
-                <h2 class="mb-0 bread">Products Single</h2>
+<html>
+
+
+<head>
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 10px;
+            grid-column-start: 1;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            align-content: start;
+            max-width: 400px;
+            margin: 0 auto;
+            transition: all 150ms linear;
+        }
+        
+        .gallery input[type="radio"] {
+            display: none;
+        }
+        
+        .gallery label {
+            position: relative;
+            display: block;
+            padding-bottom: 60%;
+            margin: 5px;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+        
+        .gallery label:before {
+            border: 1px solid #e3e3e3;
+            content: '';
+            position: absolute;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            top: -5px;
+        }
+        
+        .gallery img {
+            display: none;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            width: 100%;
+            transition: all 150ms linear;
+        }
+        
+        .gallery input[name="select"]:checked+label+img {
+            display: block;
+        }
+        
+        .gallery input[name="select"]:checked+label:before {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="swimwear.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Swimwear</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown04">
+            <a class="dropdown-item" href="swimwear.html"></a>
+
+        </div>
+    </li>
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-center">
+                <div class="col-md-9 ftco-animate mb-5 text-center">
+                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span><span><a href="product.html">Products <i class="fa fa-chevron-right"></i></a></span><span>Products Single <i class="fa fa-chevron-right"></i></span></p>
+                    <h2 class="mb-0 bread">Products Single</h2>
+                </div>
             </div>
         </div>
+    </section>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="gallery">
+                    <input type="radio" checked="checked" name="select" id="img-tab-1">
+                    <label for="img-tab-1" style="background-image: url(images/prod-1.jpg);"></label>
+                    <img src="images/prod-1.jpg" border="0">
+
+                    <input type="radio" name="select" id="img-tab-2">
+                    <label for="img-tab-2" style="background-image: url(images/prod-2.jpg);"></label>
+                    <img src="images/prod-2.jpg" border="0">
+
+                    <input type="radio" name="select" id="img-tab-3">
+                    <label for="img-tab-3" style="background-image: url(images/prod-3.jpg);"></label>
+                    <img src="images/prod-3.jpg" border="0">
+
+                    <input type="radio" name="select" id="img-tab-4">
+                    <label for="img-tab-4" style="background-image: url(images/prod-4.jpg);"></label>
+                    <img src="images/prod-4.jpg" border="0">
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <div class="row mt-5 ">
+        <div class="col-md-12 nav-link-wrap ">
+            <div class="nav nav-pills d-flex text-center " id="v-pills-tab " role="tablist " aria-orientation="vertical ">
+                <a class="nav-link ftco-animate active mr-lg-1 " id="v-pills-1-tab " data-toggle="pill " href="#v-pills-1 " role="tab " aria-controls="v-pills-1 " aria-selected="true "></a>
+
+                <a class="nav-link ftco-animate mr-lg-1 " id="v-pills-2-tab " data-toggle="pill " href="#v-pills-2 " role="tab " aria-controls="v-pills-2 " aria-selected="false "></a>
+
+                <a class="nav-link ftco-animate mr-lg-1 " id="v-pills-3-tab " data-toggle="pill " href="#v-pills-3 " role="tab " aria-controls="v-pills-3 " aria-selected="false "></a>
+                <a class="nav-link ftco-animate mr-lg-1 " id="v-pills-4-tab " data-toggle="pill " href="#v-pills-4 " role="tab " aria-controls="v-pills-4 " aria-selected="false "></a>
+
+            </div>
+        </div>
+        <div class="col-md-12 tab-wrap ">
+            <div class="tab-content bg-light " id="v-pills-tabContent ">
+                <div class="tab-pane fade show active " id="v-pills-1 " role="tabpanel " aria-labelledby="day-1-tab ">
+
+                </div>
+                <div class="tab-pane fade " id="v-pills-2 " role="tabpanel " aria-labelledby="v-pills-day-2-tab ">
+
+                </div>
+                <div class="tab-pane fade " id="v-pills-3 " role="tabpanel " aria-labelledby="v-pills-day-3-tab ">
+
+                </div>
+                <div class="tab-pane fade " id="v-pills-4 " role="tabpanel " aria-labelledby="v-pills-day-4-tab ">
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
-</section>
+
+    </div>
+
+
+</body>
+
+</html>
+
+
+
+<div class="col-lg-6 mb-5 ftco-animate">
+    <a href="images/prod-1.jpg" class="image-popup prod-img-bg"><img src="images/prod-1.jpg" class="img-fluid" alt="Colorlib Template"></a>
+
+</div>
+
+
+
+
+
+
+<div class="button-group filters-button-group">
+    <button class="button is-checked" data-filter="*">All</button>
+    <button class="button" data-filter=".Demi">Demi</button>
+    <button class="button" data-filter=".Balconette">Balconette</button>
+    <button class="button" data-filter=".Push-Up">Push-Up</button>
+    <button class="button" data-filter=".Full Coverage">Full Coverage</button>
+
+    <button class="button" data-filter=".Wireless">Wireless</button>
+    <button class="button" data-filter=".Bustiers">Bustiers</button>
+
+    <button class="button" data-filter=".Bralettes">Bralettes</button>
+
+    <button class="button" data-filter=".Teenage">Teenage</button>
+    <button class="button" data-filter=".Bra Accessories">Bra Accessories</button>
+</div>
+
+
+<style>
+    .button {
+        display: inline-block;
+        padding: 0.2em 1.0em;
+        border-radius: 25px;
+        background: #ffffff;
+        font-family: sans-serif;
+        font-size: 16px;
+        cursor: pointer;
+        border: 1px solid #844257;
+        margin: 5px;
+        -webkit-transition: background 0.3s;
+        -moz-transition: background 0.3s;
+        transition: background 0.3s;
+    }
+    
+    .button:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .button:active,
+    .button.is-checked {
+        background-color: rgba(0, 0, 0, 0.1);
+        outline: none;
+    }
+    
+    .button-group {
+        margin: 20px 0;
+        text-align: center;
+    }
+    
+    .button-group:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    
+    img {
+        vertical-align: middle;
+    }
+    
+    .img-responsive {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .grid article {
+        background-color: #FFFFFF;
+        display: block;
+        float: left;
+        margin: 1%;
+        width: 23%;
+    }
+    
+    @media (max-width: 1024px) {
+        .grid article {
+            width: 31.3%;
+        }
+    }
+    
+    @media (max-width: 767px) {
+        .grid article {
+            width: 48%;
+        }
+    }
+    
+    @media (max-width: 479px) {
+        .grid article {
+            margin: 2% 0;
+            width: 100%;
+        }
+    }
+</style>
+
+
+
+
+<script>
+    $(function() {
+        var $grid = $('.grid').isotope({
+            itemSelector: 'article'
+        });
+
+        // filter buttons
+        $('.filters-button-group').on('click', 'button', function() {
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({
+                filter: filterValue
+            });
+        });
+        $('.button-group').each(function(i, buttonGroup) {
+            var $buttonGroup = $(buttonGroup);
+            $buttonGroup.on('click', 'button', function() {
+                $buttonGroup.find('.is-checked').removeClass('is-checked');
+                $(this).addClass('is-checked');
+            });
+        });
+    });
+
+    // debounce so filtering doesn't happen every millisecond
+    function debounce(fn, threshold) {
+        var timeout;
+        return function debounced() {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+
+            function delayed() {
+                fn();
+                timeout = null;
+            }
+            timeout = setTimeout(delayed, threshold || 100);
+        }
+    }
+
+    $(window).bind("load", function() {
+        $('#all').click();
+    });
+</script>

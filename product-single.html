@@ -20,6 +20,63 @@
 
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 10px;
+            grid-column-start: 1;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            align-content: start;
+            max-width: 400px;
+            margin: 0 auto;
+            transition: all 150ms linear;
+        }
+        
+        .gallery input[type="radio"] {
+            display: none;
+        }
+        
+        .gallery label {
+            position: relative;
+            display: block;
+            padding-bottom: 60%;
+            margin: 5px;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+        
+        .gallery label:before {
+            border: 0px solid #e3e3e3;
+            content: '';
+            position: absolute;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            top: -5px;
+        }
+        
+        .gallery img {
+            display: none;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            width: 100%;
+            transition: all 150ms linear;
+        }
+        
+        .gallery input[name="select"]:checked+label+img {
+            display: block;
+        }
+        
+        .gallery input[name="select"]:checked+label:before {
+            border: 1px solid #000;
+        }
+    </style>
 </head>
 
 <body>
@@ -44,7 +101,8 @@
                         </p>
                     </div>
                     <div class="reg">
-                        <p class="mb-0"><a href="login.html" class="mr-2">Sign Up</a> <a href="login.html">Log In</a></p>
+                        <p class="mb-0"> <a href="login.html">Log In</a></p>
+                        <!-- should be changed to account after login -->
                     </div>
                 </div>
             </div>
@@ -55,6 +113,7 @@
         <div class="container">
             <a class="navbar-brand" href="index.html " style="vertical-align: middle;">Loops & <span>Knots</span></a>
             <div class="order-lg-last btn-group">
+                <a href="wishlist.html" class="d-flex btn-cart align-items-center justify-content-center" aria-haspopup=" true" aria-expanded="false"><span class="flaticon-heart "></span></a>
                 <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="flaticon-shopping-bag"></span>
                     <div class="d-flex justify-content-center align-items-center"><small>3</small></div>
@@ -147,13 +206,7 @@
                             <a class="dropdown-item" href="sportswear.html">Jackets & Vests</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="swimwear.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Swimwear</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="swimwear.html"></a>
 
-                        </div>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="lingerie.html" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lingerie</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown05">
@@ -183,7 +236,7 @@
     </nav>
     <!-- END nav -->
 
-    <section style="background-color: #bbb; widows: 1255px;; height: 90px;" data-stellar-background-ratio="0.5">
+    <section style="background-color: #844257; widows: 1255px;; height: 90px;" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
@@ -197,65 +250,114 @@
     <section class="ftco-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 mb-5 ftco-animate">
-                    <a href="images/prod-1.jpg" class="image-popup prod-img-bg"><img src="images/prod-1.jpg" class="img-fluid" alt="Colorlib Template"></a>
+                <div class="gallery">
+                    <input type="radio" checked="checked" name="select" id="img-tab-1">
+                    <label for="img-tab-1" style="background-image: url(images/prod-1.jpg) ; "></label>
+                    <img src="images/prod-1.jpg" border="0">
+
+                    <input type="radio" name="select" id="img-tab-2">
+                    <label for="img-tab-2" style="background-image: url(images/prod-2.jpg);"></label>
+                    <img src="images/prod-2.jpg" border="0">
+
+                    <input type="radio" name="select" id="img-tab-3">
+                    <label for="img-tab-3" style="background-image: url(images/prod-3.jpg);"></label>
+                    <img src="images/prod-3.jpg" border="0">
+
+                    <input type="radio" name="select" id="img-tab-4">
+                    <label for="img-tab-4" style="background-image: url(images/prod-4.jpg); "></label>
+                    <img src="images/prod-4.jpg" border="0">
+
 
                 </div>
-                <div class="col-lg-6 product-details pl-md-5 ftco-animate">
+                <div class="col-lg-6 product-details pl-md-5 ftco-animate ">
                     <h3>Pink Panther 151</h3>
-                    <div class="rating d-flex">
-                        <p class="text-left mr-4">
-                            <a href="#" class="mr-2">5.0</a>
-                            <a href="#"><span class="fa fa-star"></span></a>
-                            <a href="#"><span class="fa fa-star"></span></a>
-                            <a href="#"><span class="fa fa-star"></span></a>
-                            <a href="#"><span class="fa fa-star"></span></a>
-                            <a href="#"><span class="fa fa-star"></span></a>
+                    <div class="rating d-flex ">
+                        <p class="text-left mr-4 ">
+                            <a href="# " class="mr-2 ">5.0</a>
+                            <a href="# "><span class="fa fa-star "></span></a>
+                            <a href="# "><span class="fa fa-star "></span></a>
+                            <a href="# "><span class="fa fa-star "></span></a>
+                            <a href="# "><span class="fa fa-star "></span></a>
+                            <a href="# "><span class="fa fa-star "></span></a>
                         </p>
-                        <p class="text-left mr-4">
-                            <a href="#" class="mr-2" style="color: #000;">100 <span style="color: #bbb;">Rating</span></a>
+                        <p class="text-left mr-4 ">
+                            <a href="# " class="mr-2 " style="color: #000; ">100 <span style="color: #bbb; ">Rating</span></a>
                         </p>
-                        <p class="text-left">
-                            <a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
+                        <p class="text-left ">
+                            <a href="# " class="mr-2 " style="color: #000; ">500 <span style="color: #bbb; ">Sold</span></a>
                         </p>
                     </div>
-                    <p class="price"><span>$120.00</span></p>
+                    <p class="price "><span>$120.00</span></p>
 
-                    <div class="row mt-4">
-                        <div class="input-group col-md-6 d-flex mb-3">
-                            <span class="input-group-btn mr-2">
-	                	<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
-	                   <i class="fa fa-minus"></i>
+                    <div class="row mt-4 ">
+                        <div class="input-group col-md-6 d-flex mb-3 ">
+                            <span class="input-group-btn mr-2 ">
+	                	<button type="button " class="quantity-left-minus btn "  data-type="minus " data-field=" ">
+	                   <i class="fa fa-minus "></i>
 	                	</button>
 	            		</span>
-                            <input type="text" id="quantity" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-                            <span class="input-group-btn ml-2">
-	                	<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
-	                     <i class="fa fa-plus"></i>
+                            <input type="text " id="quantity " name="quantity " class="quantity form-control input-number " value="1 " min="1 " max="100 ">
+                            <span class="input-group-btn ml-2 ">
+	                	<button type="button " class="quantity-right-plus btn " data-type="plus " data-field=" ">
+	                     <i class="fa fa-plus "></i>
 	                 </button>
 	             	</span>
                         </div>
-                        <div class="w-100"></div>
-                        <div class="col-md-12">
-                            <p style="color: #000;">80 piece available</p>
+                        <div class="w-100 "></div>
+                        <div class="col-md-12 ">
+                            <p style="color: black;">
+                                <b style=" font-weight: 450; font-size: 20px; margin-right: 40px;">Colors
+                                    </b>
+                                <a href="product-single.html" style="border:1px solid #000; background: #000; color: black;">......</a>
+                                <a href="product-single.html" style="border:1px solid #000; background: red; color:red;">......</a>
+                                <a href="product-single.html" style="border:1px solid #000; background: pink; color: pink;">......</a>
+                                <a href="product-single.html" style=" border:1px solid #000000; background: white; color: white;">......</a>
+                            </p>
                         </div>
                     </div>
-                    <p><a href="cart.html" class="btn btn-primary py-3 px-5 mr-2">Add to Cart</a><a href="cart.html" class="btn btn-primary py-3 px-5">Buy now</a></p>
+                    <div>
+                        <div class="row mb-4">
+                            <div class="col-md-12 d-flex  align-items-center">
+                                <h4 style="margin-right: 50px;" class="product-select">Sizes </h4>
+                                <select class="selectpicker" single>
+                                    <option>28-A</option>
+                                    <option>28-B</option>
+                                    <option>28-C</option>
+                                    <option>28-D</option>
+                                    <option>30</option>
+                                    <option>32</option>
+                                    <option>34</option>
+                                    <option>36</option>
+                                    <option>38</option>
+                                    <option>40</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <p><a href="cart.html " class="btn btn-primary py-3 px-5 mr-2 ">Add to Cart</a><a href="cart.html " class="btn btn-primary py-3 px-5 mr-2 ">Buy now</a>
+                        <a href="wishlist.html" class="btn btn-primary py-3 px-5 ">Wishlist</a>
+                    </p>
                 </div>
+
             </div>
+            <p>
+                <br>
+                <br>
+                <br>
+                <br>
 
-
-
-
+            </p>
             <div class="row mt-5">
+
                 <div class="col-md-12 nav-link-wrap">
                     <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link ftco-animate active mr-lg-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Description</a>
 
-                        <a class="nav-link ftco-animate mr-lg-1" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Manufacturer</a>
-                        <a class="nav-link ftco-animate mr-lg-1" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Size Chart</a>
-                        <a class="nav-link ftco-animate" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Reviews</a>
+                        <a class="nav-link ftco-animate mr-lg-1" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Manufacture</a>
 
+                        <a class="nav-link ftco-animate mr-lg-1" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Size Chart</a>
+                        <a class="nav-link ftco-animate mr-lg-1" id="v-pills-4-tab" data-toggle="pill" href="#v-pills-4" role="tab" aria-controls="v-pills-4" aria-selected="false">Review</a>
 
                     </div>
                 </div>
@@ -264,26 +366,26 @@
                     <div class="tab-content bg-light" id="v-pills-tabContent">
 
                         <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
-                            <div class="p-4">
-                                <h3 class="mb-4">Pink Panther 151</h3>
-                                <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little
+                            <div class="p-4 ">
+                                <h3 class="mb-4 ">Pink Panther 151</h3>
+                                <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and " and the Little
                                     Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and
                                     Parole and dragged her into their agency, where they abused her for their.</p>
                             </div>
                         </div>
 
                         <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
-                            <div class="p-4">
-                                <h3 class="mb-4">Manufactured By Liquor Store</h3>
-                                <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little
+                            <div class="p-4 ">
+                                <h3 class="mb-4 ">Manufactured By Liquor Store</h3>
+                                <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and " and the Little
                                     Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and
                                     Parole and dragged her into their agency, where they abused her for their.</p>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
-                            <div class="p-4">
-                                <h3 class="mb-4">Size Chart</h3>
-                                <table class="sizeChart" border="0" cellpadding="10" cellspacing="0" width="100%">
+                            <div class="row p-4 ">
+                                <h3 class="mb-4 ">Size Chart</h3>
+                                <table class="sizeChart " border="0 " cellpadding="10 " cellspacing="0 " width="100% ">
                                     <thead>
                                         <tr>
                                             <td>Mens</td>
@@ -342,137 +444,181 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-day-4-tab">
-                            <div class="row p-4">
-                                <div class="col-md-7">
-                                    <h3 class="mb-4">23 Reviews</h3>
-                                    <div class="review">
-                                        <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
-                                        <div class="desc">
-                                            <h4>
-                                                <span class="text-left">Jacob Webb</span>
-                                                <span class="text-right">25 April 2020</span>
-                                            </h4>
-                                            <p class="star">
-                                                <span>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-							   					</span>
-                                                <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-                                            </p>
-                                            <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
-                                        </div>
-                                    </div>
-                                    <div class="review">
-                                        <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-                                        <div class="desc">
-                                            <h4>
-                                                <span class="text-left">Jacob Webb</span>
-                                                <span class="text-right">25 April 2020</span>
-                                            </h4>
-                                            <p class="star">
-                                                <span>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-							   					</span>
-                                                <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-                                            </p>
-                                            <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
-                                        </div>
-                                    </div>
-                                    <div class="review">
-                                        <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
-                                        <div class="desc">
-                                            <h4>
-                                                <span class="text-left">Jacob Webb</span>
-                                                <span class="text-right">25 April 2020</span>
-                                            </h4>
-                                            <p class="star">
-                                                <span>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-								   					<i class="fa fa-star"></i>
-							   					</span>
-                                                <span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-                                            </p>
-                                            <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
-                                        </div>
+                            <div class="p-4 ">
+                                <h3 class="mb-4 ">23 Reviews</h3>
+                                <div class="review ">
+                                    <div class="user-img " style="background-image: url(images/person_1.jpg) "></div>
+                                    <div class="desc ">
+                                        <h4>
+                                            <span class="text-left ">Jacob Webb</span>
+                                            <span class="text-right ">25 April 2020</span>
+                                        </h4>
+                                        <p class="star ">
+                                            <span>
+                                                           <i class="fa fa-star "></i>
+                                                           <i class="fa fa-star "></i>
+                                                           <i class="fa fa-star "></i>
+                                                           <i class="fa fa-star "></i>
+                                                           <i class="fa fa-star "></i>
+                                                       </span>
+                                            <span class="text-right "><a href="# " class="reply "><i class="icon-reply "></i></a></span>
+                                        </p>
+                                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="rating-wrap">
-                                        <h3 class="mb-4">Give a Review</h3>
-                                        <p class="star">
+                                <div class="review ">
+                                    <div class="user-img " style="background-image: url(images/person_2.jpg) "></div>
+                                    <div class="desc ">
+                                        <h4>
+                                            <span class="text-left ">Jacob Webb</span>
+                                            <span class="text-right ">25 April 2020</span>
+                                        </h4>
+                                        <p class="star ">
                                             <span>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					(98%)
-						   					</span>
-                                            <span>20 Reviews</span>
+                                                           <i class="fa fa-star "></i>
+                                                           <i class="fa fa-star "></i>
+                                                           <i class="fa fa-star "></i>
+                                                           <i class="fa fa-star "></i>
+                                                           <i class="fa fa-star "></i>
+                                                       </span>
+                                            <span class="text-right "><a href="# " class="reply "><i class="icon-reply "></i></a></span>
                                         </p>
-                                        <p class="star">
+                                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4 ">23 Reviews</h3>
+                                <div class="review ">
+                                    <div class="user-img " style="background-image: url(images/person_1.jpg) "></div>
+                                    <div class="desc ">
+                                        <h4>
+                                            <span class="text-left ">Jacob Webb</span>
+                                            <span class="text-right ">25 April 2020</span>
+                                        </h4>
+                                        <p class="star ">
+                                            <span><i class="fa fa-star "></i>
+                                            <i class="fa fa-star "></i>
+                                            <i class="fa fa-star "></i>
+                                            <i class="fa fa-star "></i>
+                                            <i class="fa fa-star "></i>
+                                            </span>
+                                            <span class="text-right "><a href="# " class="reply "><i class="icon-reply "></i></a></span>
+                                        </p>
+                                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
+                                    </div>
+                                </div>
+                                <div class="review ">
+                                    <div class="user-img " style="background-image: url(images/person_2.jpg) "></div>
+                                    <div class="desc ">
+                                        <h4>
+                                            <span class="text-left ">Jacob Webb</span>
+                                            <span class="text-right ">25 April 2020</span>
+                                        </h4>
+                                        <p class="star ">
+                                            <span> <i class="fa fa-star "></i>
+        <i class="fa fa-star "></i>
+                                               <i class="fa fa-star "></i>
+                                                  <i class="fa fa-star "></i>
+                                                 <i class="fa fa-star "></i>
+                                                                                       </span>
+                                            <span class="text-right "><a href="# " class="reply "><i class="icon-reply "></i></a></span>
+                                        </p>
+                                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
+                                    </div>
+                                </div>
+                                <div class="review ">
+                                    <div class="user-img " style="background-image: url(images/person_3.jpg) "></div>
+                                    <div class="desc ">
+                                        <h4>
+                                            <span class="text-left ">Jacob Webb</span>
+                                            <span class="text-right ">25 April 2020</span>
+                                        </h4>
+                                        <p class="star ">
                                             <span>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					(85%)
-						   					</span>
-                                            <span>10 Reviews</span>
+                                                                                           <i class="fa fa-star "></i>
+                                                                                           <i class="fa fa-star "></i>
+                                                                                           <i class="fa fa-star "></i>
+                                                                                           <i class="fa fa-star "></i>
+                                                                                           <i class="fa fa-star "></i>
+                                                                                       </span>
+                                            <span class="text-right "><a href="# " class="reply "><i class="icon-reply "></i></a></span>
                                         </p>
-                                        <p class="star">
-                                            <span>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					(98%)
-						   					</span>
-                                            <span>5 Reviews</span>
-                                        </p>
-                                        <p class="star">
-                                            <span>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					(98%)
-						   					</span>
-                                            <span>0 Reviews</span>
-                                        </p>
-                                        <p class="star">
-                                            <span>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					<i class="fa fa-star"></i>
-							   					(98%)
-						   					</span>
-                                            <span>0 Reviews</span>
-                                        </p>
+                                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-4 ">
+                                <div class="rating-wrap ">
+                                    <h3 class="mb-4 ">Give a Review</h3>
+                                    <p class="star ">
+                                        <span>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       (98%)
+                                                                                   </span>
+                                        <span>20 Reviews</span>
+                                    </p>
+                                    <p class="star ">
+                                        <span>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       (85%)
+                                                                                   </span>
+                                        <span>10 Reviews</span>
+                                    </p>
+                                    <p class="star ">
+                                        <span>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       (98%)
+                                                                                   </span>
+                                        <span>5 Reviews</span>
+                                    </p>
+                                    <p class="star ">
+                                        <span>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       (98%)
+                                                                                   </span>
+                                        <span>0 Reviews</span>
+                                    </p>
+                                    <p class="star ">
+                                        <span>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       <i class="fa fa-star "></i>
+                                                                                       (98%)
+                                                                                   </span>
+                                        <span>0 Reviews</span>
+                                    </p>
+                                </div>
+
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+
+
+
 
     <footer class="ftco-footer ">
         <div class="container ">
@@ -484,7 +630,7 @@
                         <ul class="ftco-footer-social list-unstyled mt-2 ">
                             <li class="ftco-animate "><a href="https://twitter.com/Loopsnknots?s=20 "><span class="fa fa-twitter "></span></a></li>
                             <li class="ftco-animate "><a href="https://www.facebook.com/Loopsnknots "><span class="fa fa-facebook "></span></a></li>
-                            <li class="ftco-animate "><a href="# "><span class="fa fa-instagram "></span></a></li>
+                            <li class="ftco-animate "><a href="coming.html"><span class="fa fa-instagram "></span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -492,9 +638,9 @@
                     <div class="ftco-footer-widget mb-4 ml-md-4 ">
                         <h2 class="ftco-heading-2 ">My Accounts</h2>
                         <ul class="list-unstyled ">
-                            <li><a href="# "><span class="fa fa-chevron-right mr-2 "></span>My Account</a></li>
+                            <li><a href="account.html"><span class="fa fa-chevron-right mr-2 "></span>My Account</a></li>
                             <li><a href="login.html "><span class="fa fa-chevron-right mr-2 "></span>Register / Log In</a></li>
-                            <li><a href="# "><span class="fa fa-chevron-right mr-2 "></span>My Order</a></li>
+                            <li><a href="account.html"><span class="fa fa-chevron-right mr-2 "></span>My Order</a></li>
                         </ul>
                     </div>
                 </div>
@@ -549,12 +695,8 @@
 
 
     <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen">
-        <svg class="circular " width="48px " height="48px ">
-        <circle class="path-bg " cx="24 " cy="24 " r="22 " fill="none " stroke-width="4 " stroke="#eeeeee "/>
-        <circle class="path " cx="24 " cy="24 " r="22" fill="none " stroke-width="4 " stroke-miterlimit="10 " stroke="#844257 "/>
-        </svg>
-    </div>
+    <div id="ftco-loader" class="show fullscreen "><svg class="circular " width="48px " height="48px "><circle class="path-bg " cx="24 " cy="24 " r="22 " fill="none " stroke-width="4 " stroke="#eeeeee "/><circle class="path " cx="24 " cy="24 " r="22
+                " fill="none " stroke-width="4 " stroke-miterlimit="10 " stroke="#844257 "/></svg></div>
 
 
     <script src="js/jquery.min.js "></script>
