@@ -1,0 +1,403 @@
+<html>
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+         :root {
+            --color-white: #f3f3f3;
+            --color-darkblue: #1b1b32;
+            --color-darkblue-alpha: rgba(27, 27, 50, 0.8);
+            --color-green: #37af65;
+        }
+        
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1em;
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--color-white);
+            margin: 0;
+        }
+        /* mobile friendly alternative to using background-attachment: fixed */
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            background: var(--color-darkblue);
+            background-image: linear-gradient( 5deg, rgba(192, 192, 192, 0.8), rgba(192, 192, 192, 0.8)), url(https://w.wallhaven.cc/full/d5/wallhaven-d567ll.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        h1 {
+            font-weight: 400;
+            line-height: 1.2;
+        }
+        
+        h1,
+        p {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        
+        label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        input,
+        button,
+        select,
+        textarea {
+            margin: 0;
+            font-family: inherit;
+            line-height: inherit;
+        }
+        
+        button {
+            border: none;
+        }
+        
+        .container {
+            width: 100%;
+            margin: 3.125rem auto 0 auto;
+        }
+        
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+        
+        .header {
+            padding: 0 0.625rem;
+            margin-bottom: 1.875rem;
+        }
+        
+        .description {
+            font-style: italic;
+            font-weight: 200;
+            text-shadow: 1px 1px 1px rgba(132, 66, 87, 1);
+        }
+        
+        .clue {
+            margin-left: 0.25rem;
+            color: #e4e4e4;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        /* form */
+        
+        form {
+            background-color: #bb5769;
+            opacity: 0.85;
+            padding: 2.5rem 0.625rem;
+            border-radius: 0.25rem;
+        }
+        
+        @media (min-width: 480px) {
+            form {
+                padding: 2.5rem;
+            }
+        }
+        
+        .form-group {
+            margin: 0 auto 1.25rem auto;
+            padding: 0.25rem;
+        }
+        
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 2.375rem;
+            padding: 0.375rem 0.75rem;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        
+        .form-control:focus {
+            border-color: #844257;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(132, 66, 87, 1);
+        }
+        
+        .input-radio,
+        .input-checkbox {
+            display: inline-block;
+            margin-right: 0.625rem;
+            min-height: 1.25rem;
+            min-width: 1.25rem;
+        }
+        
+        .input-textarea {
+            min-height: 120px;
+            width: 100%;
+            padding: 0.625rem;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background: #bb5769;
+            color: white;
+            font-weight: bold;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        
+        .submit-button:hover {
+            background: #844257;
+        }
+        
+        .quote-imgs-thumbs {
+            background: #eee;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+            margin: 1.5rem 0;
+            padding: 0.75rem;
+        }
+        
+        .quote-imgs-thumbs--hidden {
+            display: none;
+        }
+        
+        .img-preview-thumb {
+            background: #fff;
+            border: 1px solid #777;
+            border-radius: 0.25rem;
+            box-shadow: 0.125rem 0.125rem 0.0625rem rgba(132, 66, 87, 1);
+            margin-right: 1rem;
+            max-width: 140px;
+            padding: 0.25rem;
+        }
+        
+        #prod:hover {
+            background-color: #844257;
+        }
+        
+        #size ::after {
+            background-color: #844257;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 id="title" class="text-center" style="color: black;">Product form</h1>
+            <!-- p id="description" class="description text-center">We always love to hear from you! </-p-->
+        </header>
+        <form id="survey-form" method="POST" action="/addproduct">
+            <div class="form-group"><label id="name-label" for="name">Product Name</label><input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required /></div>
+            <!--div class="form-group"><label id="email-label" for="email"></label><input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required />
+            </div>
+            <div-- class="form-group"><label id="number-label" for="number">Phone<span class="clue">(optional)</span></label><input type="number" name="age" id="number" min="10" max="99" class="form-control" placeholder="Enter your Phone" /></div-->
+            <!--div class="form-group">
+                <p>Type of Product</p><select id="dropdown" name="role" class="form-control" required>
+                    <option disabled selected value>Type of Product</option>
+                    </select></!--div-->
+            <div>
+                <select id="options" name="category">
+                 <option value=""  disabled selected>Type of Product</option>
+                        <option id="prod"  value="bra">Bra</option>
+                        <option id="prod" value="panties">Panties</option>
+                        <option id="prod" value="shapewear">Shapewear</option>
+                        <option id="prod" value="sports">Sports</option>
+                        <option id="prod" value="lingerie">Lingerie</option>
+                        <option id="prod" value="accesories">Accesories</option>
+                        <option id="prod" value="plus size">Plus Size</option>
+                        <option id="prod" value="bridal">Bridal Wear</option>
+                        
+                      </select>
+
+                <select id="choices">
+                        <option value="" disabled selected>Sub Category</option>
+                        
+                </select>
+
+            </div>
+            <div class="form-group">
+                <p>Sizes Available <span class="clue">(Check all that apply)</span></p>
+
+                <label><input id="size" name="prefer28" value="28" type="checkbox" class="input-checkbox" />28</label>
+                <label><input id="size" name="prefer30a" value="30-A" type="checkbox" class="input-checkbox" />30-A</label>
+                <label><input id="size" name="prefer30b" value="30-B" type="checkbox" class="input-checkbox" />30-B</label>
+                <label><input id="size" name="prefer30c" value="30-C" type="checkbox" class="input-checkbox" />30-C</label>
+                <label><input id="size" name="prefer30d" value="30-D" type="checkbox" class="input-checkbox" />30-D</label>
+                <label><input id="size" name="prefer32a" value="32-A" type="checkbox" class="input-checkbox" />32-A</label>
+                <label><input id="size" name="prefer32b" value="32-B" type="checkbox" class="input-checkbox" />32-B</label>
+                <label><input id="size" name="prefer32c" value="32-C" type="checkbox" class="input-checkbox" />32-C</label>
+                <label><input id="size" name="prefer32d" value="32-D" type="checkbox" class="input-checkbox" />32-D</label>
+                <label><input id="size" name="prefer34a" value="34-A" type="checkbox" class="input-checkbox" />34-A</label>
+                <label><input id="size" name="prefer34b" value="34-B" type="checkbox" class="input-checkbox" />34-B</label>
+                <label><input id="size" name="prefer34c" value="34-C" type="checkbox" class="input-checkbox" />34-C</label>
+                <label><input id="size" name="prefer34d" value="34-D" type="checkbox" class="input-checkbox" />34-D</label>
+                <label><input id="size" name="prefer36a" value="36-A" type="checkbox" class="input-checkbox" />36-A</label>
+                <label><input id="size" name="prefer36b" value="36-B" type="checkbox" class="input-checkbox" />36-B</label>
+                <label><input id="size" name="prefer36c" value="36-C" type="checkbox" class="input-checkbox" />36-C</label>
+                <label><input id="size" name="prefer36d" value="36-D" type="checkbox" class="input-checkbox" />36-D</label>
+                <label><input id="size" name="prefer40a" value="40-A" type="checkbox" class="input-checkbox" />40-A</label>
+                <label><input id="size" name="prefer40b" value="40-B" type="checkbox" class="input-checkbox" />40-B</label>
+                <label><input id="size" name="prefer40c" value="40-C" type="checkbox" class="input-checkbox" />40-C</label>
+                <label><input id="size" name="prefer40d" value="40-D" type="checkbox" class="input-checkbox" />40-D</label>
+                <label><input id="size" name="prefer42a" value="42-A" type="checkbox" class="input-checkbox" />42-A</label>
+                <label><input id="size" name="prefer42b" value="42-B" type="checkbox" class="input-checkbox" />42-B</label>
+                <label><input id="size" name="prefer42c" value="42-C" type="checkbox" class="input-checkbox" />42-C</label>
+                <label><input id="size" name="prefer42d" value="42-D" type="checkbox" class="input-checkbox" />42-D</label>
+                <label><input id="size" name="prefer44a" value="44-A" type="checkbox" class="input-checkbox" />44-A</label>
+                <label><input id="size" name="prefer44b" value="44-B" type="checkbox" class="input-checkbox" />44-B</label>
+                <label><input id="size" name="prefer44c" value="44-C" type="checkbox" class="input-checkbox" />44-C</label>
+                <label><input id="size" name="prefer44d" value="44-D" type="checkbox" class="input-checkbox" />44-D</label>
+                <label><input id="size" name="preferXS" value="xs" type="checkbox" class="input-checkbox" />XS</label>
+                <label><input id="size" name="preferS" value="s" type="checkbox" class="input-checkbox" />S</label>
+                <label><input id="size" name="preferM" value="m" type="checkbox" class="input-checkbox" />M</label>
+                <label><input id="size" name="preferL" value="l" type="checkbox" class="input-checkbox" />L</label>
+                <label><input id="size" name="preferXL" value="xl" type="checkbox" class="input-checkbox" />XL</label>
+                <label><input id="size" name="preferXXL" value="xxl" type="checkbox" class="input-checkbox" />XXL</label>
+
+            </div>
+            <div class="form-group">
+                <p>Colors Available <span class="clue">(Check all that apply)</span></p>
+                <label><input name="preferred" value="red" type="checkbox" class="input-checkbox" />Red</label>
+                <label><input name="preferyellow" value="yellow" type="checkbox" class="input-checkbox" />yellow</label>
+                <label><input name="preferblue" value="blue" type="checkbox" class="input-checkbox" />Blue</label>
+                <label><input name="preferbrown" value="brown" type="checkbox" class="input-checkbox" />Brown</label>
+                <label><input name="preferorange" value="orange" type="checkbox" class="input-checkbox" />Orange</label>
+                <label><input name="prefergreen" value="green" type="checkbox" class="input-checkbox" />Green</label>
+                <label><input name="prefervoilet" value="violet" type="checkbox" class="input-checkbox" />Violet</label>
+                <label><input name="preferblack" value="black" type="checkbox" class="input-checkbox" />Black</label>
+                <label><input name="prefercarnation" value="carnation pink" type="checkbox" class="input-checkbox" />Carnation Pink</label>
+                <label><input name="preferyelloworange" value="yellow orange" type="checkbox" class="input-checkbox" />Yellow Orange</label>
+                <label><input name="preferbluegreen" value="blue green" type="checkbox" class="input-checkbox" />Blue Green</label>
+                <label><input name="preferredvoilet" value="red violet" type="checkbox" class="input-checkbox" />Red Violet</label>
+                <label><input name="preferredorange" value="red orange" type="checkbox" class="input-checkbox" />Red orange</label>
+                <label><input name="preferyellowgreen" value="yellow green" type="checkbox" class="input-checkbox" />Yellow Green</label>
+                <label><input name="preferbluevoilet" value="blue violet" type="checkbox" class="input-checkbox" />Blue Violet</label>
+                <label><input name="preferwhite" value="white" type="checkbox" class="input-checkbox" />white</label>
+                <label><input name="prefervoiletred" value="violet red" type="checkbox" class="input-checkbox" />Violet Red</label>
+                <label><input name="preferdandelion" value="dandelion" type="checkbox" class="input-checkbox" />Dandelion</label>
+                <label><input name="prefercerulean" value="cerulean" type="checkbox" class="input-checkbox" />Cerulean</label>
+                <label><input name="preferapricot" value="apricot" type="checkbox" class="input-checkbox" />Apricot</label>
+                <label><input name="preferscarlet" value="scarlet" type="checkbox" class="input-checkbox" />Scarlet</label>
+                <label><input name="prefergreenyellow" value="green yellow" type="checkbox" class="input-checkbox" />Green Yellow</label>
+                <label><input name="preferindigo" value="indigo" type="checkbox" class="input-checkbox" />Indigo</label>
+                <label><input name="prefergray" value="gray" type="checkbox" class="input-checkbox" />Gray</label>
+
+            </div>
+
+            <div class="form-group">
+                <p>Discription</p><textarea id="comments" class="input-textarea" name="description" placeholder="Enter product discription here"></textarea></div>
+            <div class="form-group">
+                <p>Manufactured By</p><textarea id="comments" class="input-textarea" name="manufacturedby" placeholder="Enter Manufacturing details here"></textarea></div>
+
+
+            <div class="grid-x grid-padding-x">
+                <div class="small-10 small-offset-1 medium-8 medium-offset-2 cell">
+                    <h3>Upload Image</h3>
+                    <form action="upload_file.php" id="img-upload-form" method="post" enctype="multipart/form-data">
+                        <p>
+                            <label for="upload_imgs" class="button hollow">Select Your Images +</label>
+                            <input class="show-for-sr" type="file" id="upload_imgs" name="upload_imgs[]" multiple/>
+                        </p>
+                        <div class="quote-imgs-thumbs quote-imgs-thumbs--hidden" id="img_preview" aria-live="polite"></div>
+                        <p>
+                            <input class="button large expanded" type="submit" name="submit" value="Upload Images" />
+                        </p>
+                    </form>
+                </div>
+            </div>
+            <div class="form-group"><button type="submit" id="submit" class="submit-button">Submit </button></div>
+        </form>
+    </div>
+
+
+
+</body>
+<!-- <script>
+    // Map your choices to your option value
+    var lookup = {
+        'bra': ['Demi', 'Balconette', 'Push-Up', 'Full Coverage', 'T-Shirt Bras', 'Wireless', 'Bustiers', 'Strapless', 'Bralettes & Lounge Bras', 'Sport Bras', 'Teenage', 'Bra Accessories'],
+        'panties': ['Thongs & V-Strings', 'Bikini', 'Brazilian', 'Briefs', 'Hipster', 'High-Waist & High-Leg', 'Seamless', 'Garters & More', 'Shapewears'],
+        'shapewear': ['Tummy Tucker', 'Thigh shaper', 'Waist shaper', 'Full body shaper'],
+        'sports': ['Sports Bras', 'High Impact Sports Bras', 'Medium Impact Sports Bra', 'Tank tops & Tshirts', 'Leggings', 'Joggers & Pants', 'Capri & Shorts', 'Jackets & Vests'],
+        'lingerie': ['Teddies & Bodysuits', 'Babydolls', 'Corsets & Bustiers', 'Bras & Panties'],
+        'accesories': ['Bra Straps', 'Backpacks', 'Breast Enhancer', 'Crossbodies', 'Totes', 'Shoulder Bags', 'Cosmetic Bags'],
+        'plus size': ['All'],
+        'bridal': ['Babydoll', 'Bridal Bra', 'Bridal Panties', 'Bridal Nightwear', 'Saree'],
+    };
+
+    // When an option is changed, search the above for matching choices
+    $('#options').on('change', function() {
+        // Set selected option as variable
+        var selectValue = $(this).val();
+
+        // Empty the target field
+        $('#choices').empty();
+
+        // For each chocie in the selected option
+        for (i = 0; i < lookup[selectValue].length; i++) {
+            // Output choice in the target field
+            $('#choices').append("<option value='" + lookup[selectValue][i] + "'>" + lookup[selectValue][i] + "</option>");
+        }
+    });
+
+    var imgUpload = document.getElementById('upload_imgs'),
+        imgPreview = document.getElementById('img_preview'),
+        imgUploadForm = document.getElementById('img-upload-form'),
+        totalFiles, previewTitle, previewTitleText, img;
+
+    imgUpload.addEventListener('change', previewImgs, false);
+    imgUploadForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Images Uploaded! (not really, but it would if this was on your website)');
+    }, false);
+
+    function previewImgs(event) {
+        totalFiles = imgUpload.files.length;
+
+        if (!!totalFiles) {
+            imgPreview.classList.remove('quote-imgs-thumbs--hidden');
+            previewTitle = document.createElement('p');
+            previewTitle.style.fontWeight = 'bold';
+            previewTitleText = document.createTextNode(totalFiles + ' Total Images Selected');
+            previewTitle.appendChild(previewTitleText);
+            imgPreview.appendChild(previewTitle);
+        }
+
+        for (var i = 0; i < totalFiles; i++) {
+            img = document.createElement('img');
+            img.src = URL.createObjectURL(event.target.files[i]);
+            img.classList.add('img-preview-thumb');
+            imgPreview.appendChild(img);
+        }
+    }
+</script> -->
+
+</html>

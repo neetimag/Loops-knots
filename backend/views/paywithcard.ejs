@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/orders" method="POST">
+        <script
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_51HKv9gEz43ANUvDLYx5I3UCWOAAWuFZwJ76ZFxcCYBfbVL52H10eqHIRO670eFMVbmbetSWXWj0x8FdWUndkyCta001YduNZHL"
+          data-amount="<%= totalamt * 100 %>"
+          data-name="Your Order"
+          data-description="All the items you ordered"
+          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+          data-locale="auto"
+          data-currency="inr">
+        </script>
+      </form>
+</body>
+</html>
