@@ -11,7 +11,7 @@ const flash = require("connect-flash");
 const app = express();
 
 const MongoURI =
-    "mongodb+srv://Admin12345:<password>@cluster0.be1um.mongodb.net/<dbname>?retryWrites=true&w=majority";
+    "mongodb+srv://Admin12345:admin12345@cluster0.be1um.mongodb.net/loopsdb?retryWrites=true&w=majority";
 
 const store = new Mongostore({
     uri: MongoURI,
