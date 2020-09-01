@@ -11,11 +11,11 @@ const flash = require("connect-flash");
 const app = express();
 
 const MongoURI =
-  "mongodb+srv://coderbiceps:loltroll123@cluster0.vovzc.mongodb.net/loops?retryWrites=true&w=majority";
+    "mongodb+srv://Admin12345:<password>@cluster0.be1um.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
 const store = new Mongostore({
-  uri: MongoURI,
-  collection: "loopsession",
+    uri: MongoURI,
+    collection: "loopsession",
 });
 
 app.use(bodyparser.urlencoded({ extended: false }));
@@ -24,12 +24,12 @@ app.set("view engine", "ejs");
 app.set("views", "views");
 app.use(flash());
 app.use(
-  session({
-    saveUninitialized: false,
-    resave: false,
-    store: store,
-    secret: "loopsandknotsidkmaybeooops",
-  })
+    session({
+        saveUninitialized: false,
+        resave: false,
+        store: store,
+        secret: "loopsandknotsidkmaybeooops",
+    })
 );
 
 app.use(passport.initialize());
@@ -44,11 +44,11 @@ app.use(adminRoutes);
 app.use("/auth", authRoutes);
 
 mongoose
-  .connect(MongoURI)
-  .then((client) => {
-    console.log("connected");
-    app.listen(5000);
-  })
-  .catch((err) => {
-    console.log("err");
-  });
+    .connect(MongoURI)
+    .then((client) => {
+        console.log("connected");
+        app.listen(5000);
+    })
+    .catch((err) => {
+        console.log("err");
+    });
