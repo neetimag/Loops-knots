@@ -35,7 +35,7 @@
             width: 100%;
             z-index: -1;
             background: var(--color-darkblue);
-            background-image: linear-gradient( 5deg, rgba(192, 192, 192, 0.8), rgba(192, 192, 192, 0.8)), url(C:\Users\neeti\OneDrive\Desktop\intern\liquorstore\Intern\images\image_2.jpg;);
+            background-image: linear-gradient( 5deg, rgba(192, 192, 192, 0.8), rgba(192, 192, 192, 0.8)), url(https://w.wallhaven.cc/full/d5/wallhaven-d567ll.jpg);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -96,7 +96,7 @@
         .description {
             font-style: italic;
             font-weight: 200;
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+            text-shadow: 1px 1px 1px rgba(132, 66, 87, 1);
         }
         
         .clue {
@@ -110,7 +110,7 @@
         /* form */
         
         form {
-            background-color: #5e0938;
+            background-color: #bb5769;
             opacity: 0.85;
             padding: 2.5rem 0.625rem;
             border-radius: 0.25rem;
@@ -141,9 +141,9 @@
         }
         
         .form-control:focus {
-            border-color: #80bdff;
+            border-color: #844257;
             outline: 0;
-            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            box-shadow: 0 0 0 0.2rem rgba(132, 66, 87, 1);
         }
         
         .input-radio,
@@ -165,15 +165,15 @@
             display: block;
             width: 100%;
             padding: 0.75rem;
-            background: #b3f5fc;
-            color: black;
+            background: #bb5769;
+            color: white;
             font-weight: bold;
             border-radius: 2px;
             cursor: pointer;
         }
         
         .submit-button:hover {
-            background: #7ddee8;
+            background: #844257;
         }
         
         .quote-imgs-thumbs {
@@ -192,10 +192,18 @@
             background: #fff;
             border: 1px solid #777;
             border-radius: 0.25rem;
-            box-shadow: 0.125rem 0.125rem 0.0625rem rgba(0, 0, 0, 0.12);
+            box-shadow: 0.125rem 0.125rem 0.0625rem rgba(132, 66, 87, 1);
             margin-right: 1rem;
             max-width: 140px;
             padding: 0.25rem;
+        }
+        
+        #prod:hover {
+            background-color: #844257;
+        }
+        
+        #size ::after {
+            background-color: #844257;
         }
     </style>
 </head>
@@ -203,7 +211,7 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1 id="title" class="text-center">Product form</h1>
+            <h1 id="title" class="text-center" style="color: black;">Product form</h1>
             <!-- p id="description" class="description text-center">We always love to hear from you! </-p-->
         </header>
         <form id="survey-form">
@@ -217,15 +225,15 @@
                     </select></!--div-->
             <div>
                 <select id="options">
-                        <option value="" disabled selected>Type of Product</option>
-                        <option value="bra">Bra</option>
-                        <option value="panties">Panties</option>
-                        <option value="shapewear">Shapewear</option>
-                        <option value="sports">Sports</option>
-                        <option value="lingerie">Lingerie</option>
-                        <option value="accesories">Accesories</option>
-                        <option value="plus size">Plus Size</option>
-                        <option value="bridal">Bridal Wear</option>
+                 <option value="" disabled selected>Type of Product</option>
+                        <option id="prod" value="bra">Bra</option>
+                        <option id="prod" value="panties">Panties</option>
+                        <option id="prod" value="shapewear">Shapewear</option>
+                        <option id="prod" value="sports">Sports</option>
+                        <option id="prod" value="lingerie">Lingerie</option>
+                        <option id="prod" value="accesories">Accesories</option>
+                        <option id="prod" value="plus size">Plus Size</option>
+                        <option id="prod" value="bridal">Bridal Wear</option>
                         
                       </select>
 
@@ -238,41 +246,41 @@
             <div class="form-group">
                 <p>Sizes Available <span class="clue">(Check all that apply)</span></p>
 
-                <label><input name="prefer" value="28" type="checkbox" class="input-checkbox" />28</label>
-                <label><input name="prefer" value="30-A" type="checkbox" class="input-checkbox" />30-A</label>
-                <label><input name="prefer" value="30-B" type="checkbox" class="input-checkbox" />30-B</label>
-                <label><input name="prefer" value="30-C" type="checkbox" class="input-checkbox" />30-C</label>
-                <label><input name="prefer" value="30-D" type="checkbox" class="input-checkbox" />30-D</label>
-                <label><input name="prefer" value="32-A" type="checkbox" class="input-checkbox" />32-A</label>
-                <label><input name="prefer" value="32-B" type="checkbox" class="input-checkbox" />32-B</label>
-                <label><input name="prefer" value="32-C" type="checkbox" class="input-checkbox" />32-C</label>
-                <label><input name="prefer" value="32-D" type="checkbox" class="input-checkbox" />32-D</label>
-                <label><input name="prefer" value="34-A" type="checkbox" class="input-checkbox" />34-A</label>
-                <label><input name="prefer" value="34-B" type="checkbox" class="input-checkbox" />34-B</label>
-                <label><input name="prefer" value="34-C" type="checkbox" class="input-checkbox" />34-C</label>
-                <label><input name="prefer" value="34-D" type="checkbox" class="input-checkbox" />34-D</label>
-                <label><input name="prefer" value="36-A" type="checkbox" class="input-checkbox" />36-A</label>
-                <label><input name="prefer" value="36-B" type="checkbox" class="input-checkbox" />36-B</label>
-                <label><input name="prefer" value="36-C" type="checkbox" class="input-checkbox" />36-C</label>
-                <label><input name="prefer" value="36-D" type="checkbox" class="input-checkbox" />36-D</label>
-                <label><input name="prefer" value="40-A" type="checkbox" class="input-checkbox" />40-A</label>
-                <label><input name="prefer" value="40-B" type="checkbox" class="input-checkbox" />40-B</label>
-                <label><input name="prefer" value="40-C" type="checkbox" class="input-checkbox" />40-C</label>
-                <label><input name="prefer" value="40-D" type="checkbox" class="input-checkbox" />40-D</label>
-                <label><input name="prefer" value="42-A" type="checkbox" class="input-checkbox" />42-A</label>
-                <label><input name="prefer" value="42-B" type="checkbox" class="input-checkbox" />42-B</label>
-                <label><input name="prefer" value="42-C" type="checkbox" class="input-checkbox" />42-C</label>
-                <label><input name="prefer" value="42-D" type="checkbox" class="input-checkbox" />42-D</label>
-                <label><input name="prefer" value="44-A" type="checkbox" class="input-checkbox" />44-A</label>
-                <label><input name="prefer" value="44-B" type="checkbox" class="input-checkbox" />44-B</label>
-                <label><input name="prefer" value="44-C" type="checkbox" class="input-checkbox" />44-C</label>
-                <label><input name="prefer" value="44-D" type="checkbox" class="input-checkbox" />44-D</label>
-                <label><input name="prefer" value="xs" type="checkbox" class="input-checkbox" />XS</label>
-                <label><input name="prefer" value="s" type="checkbox" class="input-checkbox" />S</label>
-                <label><input name="prefer" value="m" type="checkbox" class="input-checkbox" />M</label>
-                <label><input name="prefer" value="l" type="checkbox" class="input-checkbox" />L</label>
-                <label><input name="prefer" value="xl" type="checkbox" class="input-checkbox" />XL</label>
-                <label><input name="prefer" value="xxl" type="checkbox" class="input-checkbox" />XXL</label>
+                <label><input id="size" name="prefer" value="28" type="checkbox" class="input-checkbox" />28</label>
+                <label><input id="size" name="prefer" value="30-A" type="checkbox" class="input-checkbox" />30-A</label>
+                <label><input id="size" name="prefer" value="30-B" type="checkbox" class="input-checkbox" />30-B</label>
+                <label><input id="size" name="prefer" value="30-C" type="checkbox" class="input-checkbox" />30-C</label>
+                <label><input id="size" name="prefer" value="30-D" type="checkbox" class="input-checkbox" />30-D</label>
+                <label><input id="size" name="prefer" value="32-A" type="checkbox" class="input-checkbox" />32-A</label>
+                <label><input id="size" name="prefer" value="32-B" type="checkbox" class="input-checkbox" />32-B</label>
+                <label><input id="size" name="prefer" value="32-C" type="checkbox" class="input-checkbox" />32-C</label>
+                <label><input id="size" name="prefer" value="32-D" type="checkbox" class="input-checkbox" />32-D</label>
+                <label><input id="size" name="prefer" value="34-A" type="checkbox" class="input-checkbox" />34-A</label>
+                <label><input id="size" name="prefer" value="34-B" type="checkbox" class="input-checkbox" />34-B</label>
+                <label><input id="size" name="prefer" value="34-C" type="checkbox" class="input-checkbox" />34-C</label>
+                <label><input id="size" name="prefer" value="34-D" type="checkbox" class="input-checkbox" />34-D</label>
+                <label><input id="size" name="prefer" value="36-A" type="checkbox" class="input-checkbox" />36-A</label>
+                <label><input id="size" name="prefer" value="36-B" type="checkbox" class="input-checkbox" />36-B</label>
+                <label><input id="size" name="prefer" value="36-C" type="checkbox" class="input-checkbox" />36-C</label>
+                <label><input id="size" name="prefer" value="36-D" type="checkbox" class="input-checkbox" />36-D</label>
+                <label><input id="size" name="prefer" value="40-A" type="checkbox" class="input-checkbox" />40-A</label>
+                <label><input id="size" name="prefer" value="40-B" type="checkbox" class="input-checkbox" />40-B</label>
+                <label><input id="size" name="prefer" value="40-C" type="checkbox" class="input-checkbox" />40-C</label>
+                <label><input id="size" name="prefer" value="40-D" type="checkbox" class="input-checkbox" />40-D</label>
+                <label><input id="size" name="prefer" value="42-A" type="checkbox" class="input-checkbox" />42-A</label>
+                <label><input id="size" name="prefer" value="42-B" type="checkbox" class="input-checkbox" />42-B</label>
+                <label><input id="size" name="prefer" value="42-C" type="checkbox" class="input-checkbox" />42-C</label>
+                <label><input id="size" name="prefer" value="42-D" type="checkbox" class="input-checkbox" />42-D</label>
+                <label><input id="size" name="prefer" value="44-A" type="checkbox" class="input-checkbox" />44-A</label>
+                <label><input id="size" name="prefer" value="44-B" type="checkbox" class="input-checkbox" />44-B</label>
+                <label><input id="size" name="prefer" value="44-C" type="checkbox" class="input-checkbox" />44-C</label>
+                <label><input id="size" name="prefer" value="44-D" type="checkbox" class="input-checkbox" />44-D</label>
+                <label><input id="size" name="prefer" value="xs" type="checkbox" class="input-checkbox" />XS</label>
+                <label><input id="size" name="prefer" value="s" type="checkbox" class="input-checkbox" />S</label>
+                <label><input id="size" name="prefer" value="m" type="checkbox" class="input-checkbox" />M</label>
+                <label><input id="size" name="prefer" value="l" type="checkbox" class="input-checkbox" />L</label>
+                <label><input id="size" name="prefer" value="xl" type="checkbox" class="input-checkbox" />XL</label>
+                <label><input id="size" name="prefer" value="xxl" type="checkbox" class="input-checkbox" />XXL</label>
 
             </div>
             <div class="form-group">
@@ -359,6 +367,7 @@
             $('#choices').append("<option value='" + lookup[selectValue][i] + "'>" + lookup[selectValue][i] + "</option>");
         }
     });
+
     var imgUpload = document.getElementById('upload_imgs'),
         imgPreview = document.getElementById('img_preview'),
         imgUploadForm = document.getElementById('img-upload-form'),
@@ -390,5 +399,7 @@
         }
     }
 </script>
+
+</html>t>
 
 </html>
